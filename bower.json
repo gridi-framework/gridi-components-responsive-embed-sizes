@@ -1,0 +1,30 @@
+{
+    "name": "gridi-components-responsive-embed-sizes",
+    "description": "",
+    "main": "",
+    "authors": [
+        "Przemysław Dziadek <przemyslaw.dziadek@gmail.com>"
+    ],
+    "license": "MIT",
+    "keywords": [
+        "css",
+        "scss",
+        "gridi",
+        "components",
+        "responsive",
+        "embed",
+        "sizes"
+    ],
+    "homepage": "https://github.com/gridi-framework/gridi-components-responsive-embed-sizes",
+    "ignore": [
+        "**/.*",
+        "**/*.md",
+        "**/*.js",
+        "**/*.json",
+        "node_modules",
+        "bower_components"
+    ],
+    "dependencies": {
+        "gridi-components-responsive-embed": "*"
+    }
+}

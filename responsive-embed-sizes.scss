@@ -1,0 +1,101 @@
+.responsive-embed {
+    .responsive-embed-item,
+    img,
+    iframe,
+    object,
+    embed,
+    video {
+        &.responsive-embed-item-auto {
+            width: auto;
+            height: auto;
+            max-width: none;
+            max-height: none;
+        }
+
+        &.responsive-embed-item-contain {
+            width: auto;
+            height: auto;
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        &.responsive-embed-item-cover {
+            top: 50%;
+            left: 50%;
+            width: auto;
+            height: 100%;
+            min-width: 100%;
+            min-height: 0;
+            max-width: none;
+            max-height: none;
+            @include transform(translateX(-50%) translateY(-50%));
+
+            &.responsive-embed-item-landscape {
+                width: auto;
+                height: 100%;
+            }
+
+            &.responsive-embed-item-portrait {
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+}
+
+@include supports-object-fit() {
+    .responsive-embed {
+        .responsive-embed-item,
+        img,
+        iframe,
+        object,
+        embed,
+        video {
+            &.responsive-embed-item-cover {
+                top: 0 !important;
+                left: 0 !important;
+                width: 100% !important;
+                height: 100% !important;
+                max-width: none !important;
+                min-height: 0 !important;
+                min-width: 0 !important;
+                @include object-fit(cover);
+                @include object-position(0 0);
+                @include transform(none !important);
+
+                &.responsive-embed-item-x-center {
+                    @include object-position(50% 0);
+                }
+
+                &.responsive-embed-item-x-right {
+                    @include object-position(100% 0);
+                }
+
+                &.responsive-embed-item-y-center {
+                    @include object-position(0 50%);
+                }
+
+                &.responsive-embed-item-y-bottom {
+                    @include object-position(0 100%);
+                }
+
+                &.responsive-embed-item-x-center.responsive-embed-item-y-center,
+                &.responsive-embed-item-center {
+                    @include object-position(50% 50%);
+                }
+
+                &.responsive-embed-item-x-center.responsive-embed-item-y-bottom {
+                    @include object-position(50% 100%);
+                }
+
+                &.responsive-embed-item-x-right.responsive-embed-item-y-center {
+                    @include object-position(100% 50%);
+                }
+
+                &.responsive-embed-item-x-right.responsive-embed-item-y-bottom {
+                    @include object-position(100% 100%);
+                }
+            }
+        }
+    }
+}
