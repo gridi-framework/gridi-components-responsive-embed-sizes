@@ -20,15 +20,12 @@
         }
 
         &.responsive-embed-item-cover {
-            top: 50%;
-            left: 50%;
             width: auto;
             height: 100%;
             min-width: 100%;
             min-height: 0;
             max-width: none;
             max-height: none;
-            @include transform(translateX(-50%) translateY(-50%));
 
             &.responsive-embed-item-landscape {
                 width: auto;
@@ -54,6 +51,8 @@
             &.responsive-embed-item-cover {
                 top: 0 !important;
                 left: 0 !important;
+                bottom: auto !important;
+                right: auto !important;
                 width: 100% !important;
                 height: 100% !important;
                 max-width: none !important;
